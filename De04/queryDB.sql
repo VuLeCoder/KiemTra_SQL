@@ -1,4 +1,4 @@
--- Câu 2:
+-- Câu 2
 create or alter procedure procCau2
 	@MaKH varchar(10),
 	@Nam int,
@@ -7,7 +7,7 @@ as begin
 	select @SoLuongHD = count(*)
 	from HoaDonTT hd
 	join PhieuDat pd on pd.MaBooking = hd.MaBooking
-	where pd.MaKH = @MaKH
+	where pd.MaKH = @MaKH and year(hd.NgayTT) = @Nam
 end
 go
 
